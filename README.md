@@ -11,6 +11,7 @@ A responsive weather dashboard built with React and JavaScript.
 
 - Real-time weather data from OpenWeatherMap API
 - Search weather by city name
+- Clothing recommendations based on weather
 - Responsive design for desktop and mobile
 - Dark/light mode toggle
 - Current weather and 5-day forecast
