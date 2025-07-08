@@ -5,11 +5,11 @@ A responsive weather dashboard built with React and JavaScript.
 ![Weather Dashboard Prototype Dark](screenshots/dashboard-prototype_dark.png)
 ![Weather Dashboard Prototype Light](screenshots/dashboard-prototype_light.png)
 
-[Live Demo (coming soon)](https://tryx07.github.io/weather-dashboard)
+[Live Demo (coming soon)](https://vercel.com/home)
 
 ## Features
 
-- Real-time weather data from OpenWeatherMap API
+- Real-time weather data from OpenMeteo API
 - Search weather by city name
 - Clothing recommendations based on weather
 - Responsive design for desktop and mobile
@@ -21,9 +21,9 @@ A responsive weather dashboard built with React and JavaScript.
 
 - **Frontend:** React 18, JavaScript ES6+
 - **Styling:** Tailwind CSS
-- **API:** OpenWeatherMap API
+- **API:** OpenMeteo API
 - **HTTP Client:** Axios
-- **Deployment:** GitHub Pages
+- **Deployment:** Vercel
 
 ## Getting Started
 
@@ -44,19 +44,17 @@ A responsive weather dashboard built with React and JavaScript.
    npm install
    ```
 
-3. Get your API key from [OpenWeatherMap](https://openweathermap.org/api)
-
-4. Create a `.env` file in the root directory
+3. Create a `.env` file in the root directory
    ```
    REACT_APP_WEATHER_API_KEY=your_api_key_here
    ```
 
-5. Start the development server
+4. Start the development server
    ```bash
    npm start
    ```
 
-6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
+5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
 ## What I Learned
 
