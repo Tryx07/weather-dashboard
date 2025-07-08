@@ -1,21 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import screenshot from './assets/dark.png'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={screenshot} className="image" alt="screenshot" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Weather Dashboard - Coming Soon
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/Tryx07/weather-dashboard"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          In Progress
         </a>
       </header>
     </div>
