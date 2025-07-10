@@ -34,7 +34,7 @@ A responsive weather dashboard built with React and JavaScript.
 - Node.js (version 14 or higher)
 - npm or yarn package manager
 
-### Installation
+### Local installation
 
 1. Clone the repository
    ```bash
@@ -47,17 +47,12 @@ A responsive weather dashboard built with React and JavaScript.
    npm install
    ```
 
-3. Create a `.env` file in the root directory
-   ```
-   REACT_APP_WEATHER_API_KEY=your_api_key_here
-   ```
-
-4. Start the development server
+3. Start the development server
    ```bash
    npm start
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
 ## What I Learned
 
