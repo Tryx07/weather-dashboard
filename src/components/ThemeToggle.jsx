@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Button for dark & light mode
@@ -13,21 +13,25 @@ export default function ThemeToggle() {
     });
 
     // activate/deactivate dark-mode in <html> element
-    useEffect(() => {
-        if (darkMode) {
+    function handleToggleTheme() {
+        const newDarkMode = !darkMode;
+
+        setDarkMode(newDarkMode);
+
+        if (newDarkMode) {
             document.documentElement.classList.add('dark');            // sets Tailwind dark-mode
             localStorage.setItem('theme', 'dark');                     // saves dark-mode preference
         } else {
             document.documentElement.classList.remove('dark');  // removes Tailwind dark-mode
             localStorage.setItem('theme', 'light');                    // saves light-mode preference
         }
-    }, [darkMode]);
+    }
 
     return (
         // Button component for toggle
         <button
-            className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center shadow-lg dark:shadow-[0_0_30px_5px_rgba(4,30,123,0.5)]"
-            onClick={() => setDarkMode(!darkMode)}
+            className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center shadow-lg dark:shadow-lg-white"
+            onClick={handleToggleTheme}
         >
             {/* animation for button icons */}
             <AnimatePresence mode="sync" initial={false}>
