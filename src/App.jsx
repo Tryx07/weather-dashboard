@@ -1,12 +1,14 @@
 import './App.css';
 import ThemeToggle from "./components/ThemeToggle";
+import WeatherCard from "./components/WeatherCard";
 
 function App() {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center
                     bg-gray-300 dark:bg-gray-900
                     text-gray-900 dark:text-gray-300
-                    transition-colors duration-500">
+                    transition-colors duration-500 gr">
+            <WeatherCard />
             {/* button for theme selection */}
             <ThemeToggle />
             {/* placeholder for future components */}

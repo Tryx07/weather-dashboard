@@ -26,7 +26,7 @@ export default function ThemeToggle() {
     return (
         // Button component for toggle
         <button
-            className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center shadow-lg dark:shadow-lg-white"
+            className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center shadow-lg dark:shadow-[0_0_30px_5px_rgba(4,30,123,0.5)]"
             onClick={() => setDarkMode(!darkMode)}
         >
             {/* animation for button icons */}
