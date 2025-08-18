@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
 
-// Button for dark & light mode
 export default function ThemeToggle() {
     // initialize darkMode based of localStorage and system-preference
     const [darkMode, setDarkMode] = useState(() => {
@@ -28,9 +28,8 @@ export default function ThemeToggle() {
     }
 
     return (
-        // Button component for toggle
         <button
-            className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center shadow-lg dark:shadow-lg-white"
+            className="relative w-16 h-16 flex items-center justify-center"
             onClick={handleToggleTheme}
         >
             {/* animation for button icons */}
@@ -41,17 +40,17 @@ export default function ThemeToggle() {
                         key="moon"
                         initial={{              // starting state
                             scale: 0,           // size: tiny (invisible)
-                            rotate: 45,         // rotated
+                            rotate: 90,         // 90° rotated
                             y: 30               // below center
                         }}
                         animate={{              // target state when fading in
                             scale: 1,           // size: normal (visible)
-                            rotate: 0,          // oriented
+                            rotate: 0,          // oriented/straight
                             y: 0                // center
                         }}
                         exit={{                 // target state when fading out
                             scale: 0,           // size: tiny (invisible)
-                            rotate: -45,        // rotated other direction
+                            rotate: -90,        // 90° rotated other direction
                             y: -30              // above center
                         }}
                         transition={{           // settings for animation
@@ -59,14 +58,14 @@ export default function ThemeToggle() {
                             ease: 'easeInOut'   // smooth acceleration/deceleration
                         }}
                         className="absolute text-white text-2xl"
-                    > ⏾ </motion.span>
+                    > <Moon className="size-16" /> </motion.span>
                 ) : (
                     // sun icon in light-mode
                     <motion.span
                         key="sun"
                         initial={{
                             scale: 0,
-                            rotate: 45,
+                            rotate: 90,
                             y: 30
                         }}
                         animate={{
@@ -76,7 +75,7 @@ export default function ThemeToggle() {
                         }}
                         exit={{
                             scale: 0,
-                            rotate: -45,
+                            rotate: -90,
                             y: -30
                         }}
                         transition={{
@@ -84,7 +83,7 @@ export default function ThemeToggle() {
                             ease: 'easeInOut'
                         }}
                         className="absolute text-black text-2xl"
-                    > ☀︎ </motion.span>
+                    > <Sun className="size-16" /> </motion.span>
                 )}
             </AnimatePresence>
 
