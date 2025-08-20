@@ -56,7 +56,12 @@ A responsive weather dashboard built with React and JavaScript.
 
 ## What I Learned
 
-*coming soon!*
+- **Plan thoroughly**: Planning things out makes the development way easier
+- **Documentation is key**: Helping others understand and keeping track of what you are doing
+- **Keep it simple**: It's better doing one thing really good than multiple things poorly
+- **Problem solving approach**: Do research - try solutions - document experiences
+- **Naming matters**: Keep variable names consistent, meaningful and distinct
+- **Learning by debugging**: Most insights came from **errors and debugging**
 
 ## Future Enhancements
 
