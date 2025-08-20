@@ -65,6 +65,10 @@ A responsive weather dashboard built with React and JavaScript.
 - Add weather alerts and notifications
 - Create weather data visualization charts
 
+## Assets & Credits
+- UI icons: [Lucide](https://lucide.dev) – MIT License
+- Weather icons: [Meteocons](https://bas.dev/work/meteocons) – MIT License
+
 ## Contributing
 
 This is a learning project, but feedback and suggestions are welcome!
