@@ -56,6 +56,10 @@ A responsive weather dashboard built with React and JavaScript.
 
 5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
+## Known Issues
+
+- Browser-Zoom can alter spacing and size in unfavourable ways. Will be refined with [Issue #8](https://github.com/Tryx07/weather-dashboard/issues/8)
+
 ## What I Learned
 
 *coming soon!*
