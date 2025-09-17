@@ -1,9 +1,11 @@
-export default function WeatherCard({ className = "" }) {
+export default function WeatherCard({ className = "", children}) {
     return (
         <div
-            className={`w-[628px] h-96 grid place-items-center text-center
-                  rounded-[40px] border
-                  bg-stone-100 backdrop-blur-[20px]
+            className={`
+                  box-border w-full h-full 
+                  grid place-items-center text-center
+                  rounded-[40px] backdrop-blur-[20px]
+                  bg-stone-100 border
                   shadow-[inset_10px_10px_25px_0px_rgba(172,175,169,0.90)]
                   shadow-[inset_-10px_-10px_20px_0px_rgba(255,255,255,0.90)]
                   shadow-[inset_10px_-10px_20px_0px_rgba(172,175,169,0.20)]
@@ -14,7 +16,7 @@ export default function WeatherCard({ className = "" }) {
                   dark:shadow-[0px_0px_30px_5px_rgba(4,30,123,0.50)]
                   ${className}`}
         >
-            <p className="font-bold text-5xl">I'm a Weather-Card</p>
+            {children}
         </div>
     );
 }

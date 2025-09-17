@@ -13,15 +13,19 @@ export default function Navbar({ className = "" }) {
 
     return (
         <nav
-            className={`w-28 h-[864px] grid grid-rows-5 place-items-center gap-6
-                  rounded-[20px] border
-                  bg-stone-100 shadow-[5px_5px_13px_0_rgba(135,138,133,0.90)]
+            className={`
+                  box-border w-full h-full 
+                  grid grid-rows-5 place-items-center gap-6
+                  border rounded-[20px]
+                  bg-stone-100 
+                  shadow-[5px_5px_13px_0_rgba(135,138,133,0.90)]
                   shadow-[-5px_-5px_10px_0_rgba(255,255,255,0.90)]
                   shadow-[5px_-5px_10px_0_rgba(135,138,133,0.20)]
                   shadow-[-5px_5px_10px_0_rgba(135,138,133,0.20)]
                   dark:bg-transparent dark:backdrop-blur-2xl
                   dark:bg-gradient-to-br dark:from-violet-950/50 dark:to-fuchsia-700/10
-                  dark:shadow-[0_0_30px_5px_rgba(4,30,123,0.50)] dark:border-fuchsia-700
+                  dark:shadow-[0_0_30px_5px_rgba(4,30,123,0.50)] 
+                  dark:border-fuchsia-700
                   ${className}`}
         >
             <ul className="contents">

@@ -1,35 +1,34 @@
 import './App.css';
-import WeatherCard from "./components/WeatherCard";
-import Navbar from "./components/Navbar/Navbar";
+import {useScaleToFit} from "./hooks/useScaleToFit";
+import DashboardPage from "./pages/DashboardPage";
+import { MIN_WIDTH, MIN_HEIGHT, SAFE_DEFAULT, GAP_DEFAULT } from "./config/layout"
 
 function App() {
+    const scaleToFit = useScaleToFit(MIN_WIDTH, MIN_HEIGHT, 3);
+    const isScaling = scaleToFit < 1;
+
     return (
-        <div className="
-                min-h-screen
-                grid grid-cols-[7rem,1fr] grid-rows-[auto,auto]
-                items-start justify-items-center
-                bg-gray-300 dark:bg-gray-900
-                text-gray-900 dark:text-gray-300
-                transition-colors duration-500
-                p-8
-              "
+        <div className="relative w-full h-[100svh] overflow-y-auto overflow-x-hidden bg-stone-100 dark:bg-gray-900"
+             style={{ scrollbarGutter: 'stable both-edges' }}
         >
-            {/* Navigation to Home, Dashboard, Theme-Toggle, Setting, Location */}
-            <Navbar className="row-span-full justify-self-start"/>
-            {/* styled Card to display weather information */}
-            <WeatherCard className="row-start-1 col-start-2" />
-            <div className="row-start-2 col-start-2 grid place-items-center">
-                {/* placeholder for future components */}
-                <p className="text-xl mt-4">Weather Dashboard - Coming Soon</p>
-                {/* link to GitHub-Repo */}
-                <a
-                    className="underline mt-2"
-                    href="https://github.com/Tryx07/weather-dashboard"
-                    target="_blank"                                     // opens in new tab
-                    rel="noopener noreferrer"                           // safety: prevents access to information about origin site
-                >
-                    In Progress
-                </a>
+            <div
+                className={
+                    isScaling
+                        ? "absolute origin-top-left will-change-transform"  // scaling from top-left
+                        : "relative w-full h-full"                          // fluid
+                }
+                style={{
+                    '--SAFE': SAFE_DEFAULT,
+                    '--GAP':  GAP_DEFAULT,
+                    "--SCALE": String(scaleToFit),
+                    width:  isScaling ? MIN_WIDTH  : "100%",
+                    height: isScaling ? MIN_HEIGHT : "100%",
+                    transform: isScaling ? "scale(var(--SCALE))" : "none",
+                    }}
+            >
+                <div className="w-full h-full box-border">
+                    <DashboardPage />
+                </div>
             </div>
         </div>
     );
