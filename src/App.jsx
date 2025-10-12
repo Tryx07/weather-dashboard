@@ -1,14 +1,14 @@
 import './App.css';
 import {useScaleToFit} from "./hooks/useScaleToFit";
 import DashboardPage from "./pages/DashboardPage";
-import { MIN_WIDTH, MIN_HEIGHT, SAFE_DEFAULT, GAP_DEFAULT } from "./config/layout"
+import { MIN_WIDTH, MIN_HEIGHT } from "./config/layout"
 
 function App() {
-    const scaleToFit = useScaleToFit(MIN_WIDTH, MIN_HEIGHT, 3);
-    const isScaling = scaleToFit < 1;
+    const rawScale = useScaleToFit(MIN_WIDTH, MIN_HEIGHT, 3);
+    const isScaling = rawScale < 1;
 
     return (
-        <div className="relative w-full h-[100svh] overflow-y-auto overflow-x-hidden bg-stone-100 dark:bg-gray-900"
+        <div className="relative w-full h-[100svh] overflow-y-auto overflow-x-hidden bg-stone-100 dark:dark-bg transition-all duration-DEFAULT ease-DEFAULT"
              style={{ scrollbarGutter: 'stable both-edges' }}
         >
             <div
@@ -18,12 +18,11 @@ function App() {
                         : "relative w-full h-full"                          // fluid
                 }
                 style={{
-                    '--SAFE': SAFE_DEFAULT,
-                    '--GAP':  GAP_DEFAULT,
-                    "--SCALE": String(scaleToFit),
+                    '--scale': String(rawScale),
                     width:  isScaling ? MIN_WIDTH  : "100%",
                     height: isScaling ? MIN_HEIGHT : "100%",
-                    transform: isScaling ? "scale(var(--SCALE))" : "none",
+                    transform: isScaling ? `scale(${ rawScale || 1 })` : "none",  // 1 = no-op
+                    willChange: isScaling ? 'transform' : undefined,
                     }}
             >
                 <div className="w-full h-full box-border">

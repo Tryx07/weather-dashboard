@@ -1,11 +1,12 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, useRef} from "react";
 
 export function useScaleToFit(minWidth, minHeight, precision = 3) {
     const [scale, setScale] = useState(1);
+    const rAFRef = useRef(0);   // id of current requestAnimationFrame
+    const timeoutRef = useRef(0);    // to prevent many rerenders
 
     useEffect(() => {
 
-        let rAF = 0 ;   // id of current requestAnimationFrame
         const factor = Math.pow(10, precision);     // for calculating roundedScale to defined amount of decimals (precision)
 
         const calculateScale = () => {
@@ -17,16 +18,26 @@ export function useScaleToFit(minWidth, minHeight, precision = 3) {
             setScale(roundedScale);
         }
 
+        const calculateScaleDeferred = () => {
+            // short debounce, so many resizes don't spam rerenders
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = window.setTimeout(() => {
+                calculateScale();
+            }, 100);
+        };
+
         const onResize = () => {
-            cancelAnimationFrame(rAF);
-            rAF = requestAnimationFrame(calculateScale);    // avoid Resize-Spam
+            cancelAnimationFrame(rAFRef.current);
+            rAFRef.current = requestAnimationFrame(calculateScaleDeferred);    // avoid Resize-Spam
         }
+
         calculateScale();   // executes on start
 
         window.addEventListener("resize", onResize);
 
         return () => {
-            cancelAnimationFrame(rAF);
+            cancelAnimationFrame(rAFRef.current);
+            clearTimeout(timeoutRef.current);
             window.removeEventListener("resize", onResize);
         }
     }, [minWidth, minHeight, precision]);

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 
 export default function ThemeToggle() {
+
     // initialize darkMode based of localStorage and system-preference
     const [darkMode, setDarkMode] = useState(() => {
         if (typeof window !== 'undefined') {
