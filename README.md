@@ -2,7 +2,8 @@
 
 A responsive weather dashboard built with React and JavaScript.
 
-# [Live Demo](https://weather-dashboard-tryxs-projects-405594af.vercel.app)
+# [Live Demo (main-branch)](https://weather-dashboard-tryxs-projects-405594af.vercel.app)
+## [Test Demo (dev-branch)](https://weather-dashboard-git-dev-tryxs-projects-405594af.vercel.app)
 
 ## Protoype
 - Designed with Figma
