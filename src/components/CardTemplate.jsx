@@ -1,4 +1,4 @@
-export default function WeatherCard({ className = "", children}) {
+export default function CardTemplate({ className = "", children}) {
     return (
         <div
             className={`

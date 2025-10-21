@@ -5,7 +5,7 @@
 - ✅ Configured Tailwind CSS  
 - ✅ Created component structure
 - ✅ Created design prototype
-- 🔄 Working on WeatherCard component
+- 🔄 Working on CardTemplate component
 
 ## Challenges & Solutions
 
